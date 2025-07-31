@@ -1,0 +1,31 @@
+# 忽略 node_modules 目录
+node_modules/
+
+# 忽略依赖锁文件（根据包管理器选择）
+package-lock.json  # npm
+yarn.lock          # Yarn
+pnpm-lock.yaml     # pnpm
+
+# 忽略环境变量文件
+.env
+.env.local
+.env*.local
+
+# 忽略日志和调试文件
+*.log
+logs/
+debug/
+
+# 忽略 IDE 和编辑器配置
+.idea/
+.vscode/
+*.swp
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+
+# 忽略构建输出目录
+dist/
+build/
+out/
