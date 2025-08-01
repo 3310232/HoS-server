@@ -8,6 +8,12 @@ class UserController {
 
     ctx.body = "user create";
   }
+
+  queryAll(ctx, next) {
+    const users = UserService.queryAll();
+
+    ctx.body = "users query";
+  }
 }
 
 module.exports = new UserController();

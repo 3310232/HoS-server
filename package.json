@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@koa/cors": "^5.0.0",
     "@koa/router": "^13.1.1",
     "@langchain/community": "^0.3.49",
     "@langchain/core": "^0.3.66",
