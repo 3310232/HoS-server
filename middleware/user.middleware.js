@@ -21,7 +21,25 @@ const verifyLogin = async (ctx, next) => {
 
     const userNames = await UserService.queryByName(userName)
 
+    if (!userNames.length) {
+        return ctx.app.emit('error','userName不存在',ctx)
+    }else if(userNames[0].password!==password){
+        return ctx.app.emit('error','password错误',ctx)
+    }
     
+    await next()
+
+}
+
+const verifyIsLogin = async (ctx, next) => {
+    console.log('aaaa')
+    console.log('aaaa',ctx.request.body)
+
+    const {token} = ctx.request.body
+
+    
+
+    const userNames = await UserService.queryByName(userName)
 
     if (!userNames.length) {
         return ctx.app.emit('error','userName不存在',ctx)
@@ -43,4 +61,4 @@ const handlePassword = async(ctx,next)=>{
 }
 
 
-module.exports = {verifyUser,handlePassword,verifyLogin}
+module.exports = {verifyUser,handlePassword,verifyLogin,verifyIsLogin}

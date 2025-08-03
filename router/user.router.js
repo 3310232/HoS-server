@@ -8,7 +8,6 @@ userRouter.post("/create", verifyUser, UserController.create);
 
 userRouter.post("/login", verifyLogin, UserController.login);
 
-
 userRouter.get("/query", UserController.queryAll);
 
 module.exports = userRouter;

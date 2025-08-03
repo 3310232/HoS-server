@@ -7,17 +7,24 @@ class UserController {
     const res = await UserService.create(user);
 
     ctx.body = {
-      message:'创建用户成功',
-      data:res
+      message: '创建用户成功',
+      data: res
     }
   }
 
-  async login(ctx,next){
+  async login(ctx, next) {
+
+    const token = {
+      name:'loginStatus',
+      value:'yes',
+    }
+
     ctx.body = {
-      message:'登录成功',
+      message: '登录成功',
+      token:token,
       // data:res
     }
-    
+
   }
 
   queryAll(ctx, next) {
