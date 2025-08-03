@@ -1,12 +1,23 @@
 const UserService = require("../service/user.service");
 
 class UserController {
-  creat(ctx, next) {
+  async create(ctx, next) {
     const user = ctx.request.body;
 
-    UserService.create(user);
+    const res = await UserService.create(user);
 
-    ctx.body = "user create";
+    ctx.body = {
+      message:'创建用户成功',
+      data:res
+    }
+  }
+
+  async login(ctx,next){
+    ctx.body = {
+      message:'登录成功',
+      // data:res
+    }
+    
   }
 
   queryAll(ctx, next) {

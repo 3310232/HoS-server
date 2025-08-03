@@ -13,7 +13,7 @@ class ChatController {
 
   // WebSocket 处理
   async websocket(ctx, next) {
-console.log('访问 /chats/ws')
+  console.log('访问 /chats/ws')
     if (!ctx.websocket) {
       ctx.throw(400, "This route is only for WebSocket connections");
     }
